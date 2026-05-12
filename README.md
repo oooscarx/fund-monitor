@@ -2,7 +2,27 @@
 
 一个个人持仓邮件监控脚本：读取 `holdings.json`，拉取股票与基金净值，发送 HTML 邮件，并记录历史与生成趋势图。
 
-## 依赖安装
+## 使用 uv（推荐）
+
+1. 安装 uv（如果尚未安装）：
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+2. 同步依赖：
+
+```bash
+uv sync
+```
+
+3. 运行程序：
+
+```bash
+uv run python fund_monitor.py
+```
+
+## 兼容 pip 安装
 
 ```bash
 python3 -m pip install -r requirements.txt
@@ -72,13 +92,13 @@ EMAIL_SUBJECT=每日持仓更新
 ## 运行
 
 ```bash
-python3 fund_monitor.py
+uv run python fund_monitor.py
 ```
 
 ## crontab 示例
 
 ```cron
-30 22 * * * cd /path/to/project && /usr/bin/python3 fund_monitor.py >> monitor.log 2>&1
+30 22 * * * cd /path/to/project && /usr/bin/env uv run python fund_monitor.py >> monitor.log 2>&1
 ```
 
 ## history.csv 与 charts

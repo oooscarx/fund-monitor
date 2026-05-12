@@ -1,0 +1,14 @@
+[project]
+name = "fund-monitor"
+version = "0.1.0"
+description = "Personal holdings monitor with HTML email, history CSV, and charts"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "requests",
+  "python-dotenv",
+  "matplotlib",
+]
+
+[tool.uv]
+package = false
