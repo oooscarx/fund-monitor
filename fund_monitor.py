@@ -528,22 +528,22 @@ def build_chart_section(asset_chart_path, profit_chart_path):
 
     if asset_chart_path and os.path.exists(asset_chart_path):
         blocks.append(
-            "<div style=\"margin-top:12px;\"><div style=\"font-size:14px;color:#555;margin-bottom:8px;\">总市值变化图</div>"
+            "<div style=\"margin-top:12px;\"><div style=\"font-size:14px;color:#555;margin-bottom:8px;\">Asset Value Trend</div>"
             "<img src=\"cid:asset_value_chart\" style=\"display:block;width:100%;max-width:100%;border:1px solid #eeeeee;border-radius:10px;\" /></div>"
         )
     else:
         blocks.append(
-            "<div style=\"margin-top:12px;font-size:13px;color:#999;\">总市值变化图：暂无足够历史数据</div>"
+            "<div style=\"margin-top:12px;font-size:13px;color:#999;\">Asset Value Trend: insufficient history</div>"
         )
 
     if profit_chart_path and os.path.exists(profit_chart_path):
         blocks.append(
-            "<div style=\"margin-top:12px;\"><div style=\"font-size:14px;color:#555;margin-bottom:8px;\">总盈亏变化图</div>"
+            "<div style=\"margin-top:12px;\"><div style=\"font-size:14px;color:#555;margin-bottom:8px;\">Total Profit Trend</div>"
             "<img src=\"cid:profit_chart\" style=\"display:block;width:100%;max-width:100%;border:1px solid #eeeeee;border-radius:10px;\" /></div>"
         )
     else:
         blocks.append(
-            "<div style=\"margin-top:12px;font-size:13px;color:#999;\">总盈亏变化图：暂无足够历史数据</div>"
+            "<div style=\"margin-top:12px;font-size:13px;color:#999;\">Total Profit Trend: insufficient history</div>"
         )
 
     return "".join(blocks)
@@ -615,10 +615,10 @@ def main():
     profit_chart_path = None
     try:
         asset_chart_path = generate_chart(
-            HISTORY_FILE, CHART_DIR, "asset_value.png", "total_market_value", "总市值变化"
+            HISTORY_FILE, CHART_DIR, "asset_value.png", "total_market_value", "Asset Value Trend"
         )
         profit_chart_path = generate_chart(
-            HISTORY_FILE, CHART_DIR, "profit.png", "total_return", "总盈亏变化"
+            HISTORY_FILE, CHART_DIR, "profit.png", "total_return", "Total Profit Trend"
         )
     except Exception:
         asset_chart_path = None
