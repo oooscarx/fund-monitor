@@ -1,0 +1,18 @@
+{
+  "stocks": [
+    {
+      "code": "sh601615",
+      "name": "明阳智能",
+      "shares": 500,
+      "cost_price": 15.960
+    }
+  ],
+  "funds": [
+    {
+      "code": "005544",
+      "name": "基金名称",
+      "shares": 1000.00,
+      "cost_price": 1.2500
+    }
+  ]
+}

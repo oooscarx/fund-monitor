@@ -1,0 +1,7 @@
+.env
+monitor.log
+history.csv
+charts/*.png
+__pycache__/
+*.pyc
+holdings.json
